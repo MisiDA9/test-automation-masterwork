@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DataEntryTestRepetitive_CSV" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-08-05T21:08:26" hostname="DESKTOP-HK79H6U" time="26.543">
+<testsuite name="DataEntryTestRepetitive_CSV" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-08-05T21:49:48" hostname="DESKTOP-HK79H6U" time="19.72">
   <properties/>
-  <testcase name="paramTest1(String, String, String, String, String)[1]" classname="DataEntryTestRepetitive_CSV" time="1.293"/>
-  <testcase name="paramTest1(String, String, String, String, String)[2]" classname="DataEntryTestRepetitive_CSV" time="4.405"/>
-  <testcase name="paramTest1(String, String, String, String, String)[3]" classname="DataEntryTestRepetitive_CSV" time="1.062"/>
-  <testcase name="paramTest1(String, String, String, String, String)[4]" classname="DataEntryTestRepetitive_CSV" time="6.093"/>
-  <testcase name="paramTest1(String, String, String, String, String)[5]" classname="DataEntryTestRepetitive_CSV" time="1.949"/>
-  <testcase name="paramTest1(String, String, String, String, String)[6]" classname="DataEntryTestRepetitive_CSV" time="4.125"/>
-  <testcase name="paramTest1(String, String, String, String, String)[7]" classname="DataEntryTestRepetitive_CSV" time="1.132"/>
-  <testcase name="paramTest1(String, String, String, String, String)[8]" classname="DataEntryTestRepetitive_CSV" time="1.226"/>
-  <testcase name="paramTest1(String, String, String, String, String)[9]" classname="DataEntryTestRepetitive_CSV" time="4.072"/>
-  <testcase name="paramTest1(String, String, String, String, String)[10]" classname="DataEntryTestRepetitive_CSV" time="1.158"/>
+  <testcase name="paramTest1(String, String, String, String, String)[1]" classname="DataEntryTestRepetitive_CSV" time="1.241"/>
+  <testcase name="paramTest1(String, String, String, String, String)[2]" classname="DataEntryTestRepetitive_CSV" time="4.184"/>
+  <testcase name="paramTest1(String, String, String, String, String)[3]" classname="DataEntryTestRepetitive_CSV" time="1.15"/>
+  <testcase name="paramTest1(String, String, String, String, String)[4]" classname="DataEntryTestRepetitive_CSV" time="1.114"/>
+  <testcase name="paramTest1(String, String, String, String, String)[5]" classname="DataEntryTestRepetitive_CSV" time="3.779"/>
+  <testcase name="paramTest1(String, String, String, String, String)[6]" classname="DataEntryTestRepetitive_CSV" time="1.138"/>
+  <testcase name="paramTest1(String, String, String, String, String)[7]" classname="DataEntryTestRepetitive_CSV" time="1.086"/>
+  <testcase name="paramTest1(String, String, String, String, String)[8]" classname="DataEntryTestRepetitive_CSV" time="3.888"/>
+  <testcase name="paramTest1(String, String, String, String, String)[9]" classname="DataEntryTestRepetitive_CSV" time="1.065"/>
+  <testcase name="paramTest1(String, String, String, String, String)[10]" classname="DataEntryTestRepetitive_CSV" time="1.048"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 2969
+  <system-err><![CDATA[Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 12964
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Aug 05, 2021 11:08:16 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Aug 05, 2021 11:49:40 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-Aug 05, 2021 11:08:16 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Aug 05, 2021 11:49:40 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 92, so returning the closest version found: 91
-Aug 05, 2021 11:08:16 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Aug 05, 2021 11:49:40 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found CDP implementation for version 92 of 91
 ]]></system-err>
 </testsuite>
