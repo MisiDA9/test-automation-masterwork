@@ -1,5 +1,3 @@
-import java.io.FileInputStream;
-
 import Pages.MyAccount;
 import Pages.Registration;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -13,20 +11,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Duration;
 import java.util.Properties;
-import java.util.Random;
+
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTest {
-  int randomNumber;
   WebDriver driver;
+  WebDriverWait wait;
 
   @BeforeAll
   public void setupOnce() throws IOException {
     String browser;
+
 
     Properties properties = new Properties();
     InputStream propertiesStream = this.getClass().getResourceAsStream("/test.properties");
@@ -43,6 +42,9 @@ public class BaseTest {
       WebDriverManager.edgedriver().setup();
       this.driver = new EdgeDriver();
     }
+
+    wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+    driver.manage().window().maximize();
   }
 
   @Step ("Signing out")
@@ -51,27 +53,21 @@ public class BaseTest {
     myAccount.signOut().click();
   }
 
-  @Step ("Gives back a random number")
-  public int randomNumberGenerator() {
-    Random r = new Random();
-    int low = 10;
-    int high = 10000;
-    return randomNumber = r.nextInt(high - low) + low;
-  }
+//  @Step ("Gives back a random number")
+//  public int randomNumberGenerator() {
+//    Random r = new Random();
+//    int low = 10;
+//    int high = 10000;
+//    return randomNumber = r.nextInt(high - low) + low;
+//  }
 
   @Step ("Registration with a brand new random email")
   public void signUp() {
-    randomNumberGenerator();
+//    randomNumberGenerator();
     Registration signUpPage = new Registration(driver);
     signUpPage.open();
-
-    signUpPage.signUp("Michael", "Test", randomNumber + "michael@test.com", "pass123");
+    signUpPage.signUp("Michael", "Test", System.currentTimeMillis() + "michael@test.com", "pass123");
   }
-
-//  @BeforeEach
-//  public void setup() {
-//    driver.manage().window().maximize();
-//  }
 
   @Attachment("Screenshot")
   public byte[] makeScreenshot() {
