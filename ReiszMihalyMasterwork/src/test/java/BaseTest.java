@@ -1,4 +1,5 @@
 import Pages.MyAccount;
+import Pages.NewAddresses;
 import Pages.Registration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;
@@ -26,7 +27,6 @@ public class BaseTest {
   public void setupOnce() throws IOException {
     String browser;
 
-
     Properties properties = new Properties();
     InputStream propertiesStream = this.getClass().getResourceAsStream("/test.properties");
     properties.load(propertiesStream);
@@ -50,23 +50,22 @@ public class BaseTest {
   @Step ("Signing out")
   public void signingOut() {
     MyAccount myAccount = new MyAccount(driver);
-    myAccount.signOut().click();
+    myAccount.open();
+    myAccount.getSignOut().click();
   }
-
-//  @Step ("Gives back a random number")
-//  public int randomNumberGenerator() {
-//    Random r = new Random();
-//    int low = 10;
-//    int high = 10000;
-//    return randomNumber = r.nextInt(high - low) + low;
-//  }
 
   @Step ("Registration with a brand new random email")
   public void signUp() {
-//    randomNumberGenerator();
     Registration signUpPage = new Registration(driver);
     signUpPage.open();
     signUpPage.signUp("Michael", "Test", System.currentTimeMillis() + "michael@test.com", "pass123");
+  }
+
+  @Step ("Saving a new valid address")
+  public void saveANewAddress() {
+    NewAddresses newAddresses = new NewAddresses(driver);
+    newAddresses.open();
+    newAddresses.newAddressesInput("23 Bunting Road", "Naples", "Florida", "11111");
   }
 
   @Attachment("Screenshot")
@@ -78,5 +77,4 @@ public class BaseTest {
   public void teardown() {
     driver.quit();
   }
-
 }
