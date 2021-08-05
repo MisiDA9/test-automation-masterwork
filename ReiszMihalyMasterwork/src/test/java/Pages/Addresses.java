@@ -25,6 +25,10 @@ public class Addresses {
   }
 
   public WebElement getFeedbackMessage () {
+    return driver.findElement(By.xpath("//*[@id=\"notifications\"]/div/article"));
+  }
+
+  public WebElement getFeedbackMessageADDDADDRESSSS () {
     return driver.findElement(By.xpath("//*[@id=\"notifications\"]/div/article/ul/li"));
   }
 
@@ -35,5 +39,7 @@ public class Addresses {
   public void createNewAddresses () {
     driver.findElement(By.xpath("//*[@id=\"content\"]/div[3]/a/span")).click();
   }
+
+
 
 }
