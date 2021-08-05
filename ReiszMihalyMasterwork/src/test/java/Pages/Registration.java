@@ -60,5 +60,4 @@ public class Registration {
     getTermsAndConditions().click();
     getSaveButton().click();
   }
-
 }
