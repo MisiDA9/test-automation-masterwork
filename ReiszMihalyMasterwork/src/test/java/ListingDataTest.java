@@ -13,14 +13,13 @@ public class ListingDataTest extends BaseTest {
   @Feature("Listing data")
   @Description("After listing all products in the webshop and sorting for ascending price orders, every price should be less or equal to the next price.")
   @DisplayName("TC_06 Listing products by price - ascending")
-  public void listingData() throws InterruptedException {
+  public void listingData() {
     AllTheProducts allTheProducts = new AllTheProducts(driver);
     allTheProducts.open();
 
     listingTheProducts();
 
     wait.until(ExpectedConditions.visibilityOf(allTheProducts.getProductList()));
-    Thread.sleep(1000);
     for (int i = 0; i < allTheProducts.getPrices().size()-1; i++) {
       Assertions.assertTrue(allTheProducts.getPrices().get(i) <= allTheProducts.getPrices().get(i + 1));
     }
