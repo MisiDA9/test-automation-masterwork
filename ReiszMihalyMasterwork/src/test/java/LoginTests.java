@@ -2,12 +2,10 @@ import Pages.Login;
 import Pages.MyAccount;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-
-import java.time.Duration;
 
 
 class LoginTests extends BaseTest {
@@ -16,13 +14,11 @@ class LoginTests extends BaseTest {
   @Feature("Login")
   @Description("After a successful login attempt with valid inputs, assert that the \"Sign out\" button is displayed in the header.")
   public void loginToTheWebshop_Success() {
-    Login loginPage = new Login(driver);
-    loginPage.open();
-    loginPage.login("michael@test.com", "pass123");
+    successfulLogin();
 
     MyAccount myAccount = new MyAccount(driver);
-    Assertions.assertTrue(myAccount.signOut().isDisplayed());
-    myAccount.signOut().click();
+    Assertions.assertTrue(myAccount.getSignOut().isDisplayed());
+    myAccount.getSignOut().click();
   }
 
   @Test
@@ -30,10 +26,23 @@ class LoginTests extends BaseTest {
   @Feature("Login")
   @Description("After an unsuccessful login attempt with invalid password, assert that the error message is correct.")
   public void loginToTheWebshop_Failed() {
+    unSuccessfulLogin();
+
+    Login loginPage = new Login(driver);
+    Assertions.assertEquals(loginPage.getLoginFailedMessage().getText(),"Authentication failed.");
+  }
+
+  @Step ("Successful login")
+  public void successfulLogin(){
+    Login loginPage = new Login(driver);
+    loginPage.open();
+    loginPage.login("michael@test.com", "pass123");
+  }
+
+  @Step ("Unsuccessful login")
+  public void unSuccessfulLogin(){
     Login loginPage = new Login(driver);
     loginPage.open();
     loginPage.login("michael@test.com", "Not existing password");
-
-    Assertions.assertEquals(loginPage.getLoginFailedMessage().getText(),"Authentication failed.");
   }
 }
