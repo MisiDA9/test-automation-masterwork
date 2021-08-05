@@ -11,7 +11,7 @@ import java.time.Duration;
 
 class LogoutTest extends BaseTest{
   @Test
-  @DisplayName("TC_0X - Successful attempt")
+  @DisplayName("TC_12 - Successful logout attempt")
   @Feature("Logout")
   @Description("After successful login, log out and assert that the \"Log in to your account\" is displayed")
 
