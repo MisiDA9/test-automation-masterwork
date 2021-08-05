@@ -3,10 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static java.lang.Integer.parseInt;
 
 public class AllTheProducts {
@@ -32,13 +30,11 @@ public class AllTheProducts {
     return driver.findElement(By.xpath("//*[@id=\"js-product-list\"]/nav/div[2]/ul/li[3]/a/i"));
   }
 
-  public WebElement productList() {
+  public WebElement getProductList() {
     return driver.findElement(By.id("js-product-list"));
   }
 
-
   public List<Integer> getPrices() {
-//    List<WebElement> prices = driver.findElements(By.xpath("//span[@class='price']"));
     List<WebElement> prices = driver.findElements(By.className("price"));
     ArrayList<Integer> myList = new ArrayList<Integer>();
 
@@ -50,12 +46,6 @@ public class AllTheProducts {
       } else if (prices.get(i).getText().length() == 7)
         myList.add(i, (parseInt(prices.get(i).getText().substring(1, 4))));
     }
-
     return myList;
   }
-
-  public WebElement getPreviousButton() {
-    return driver.findElement(By.className("previous js-search-link"));
-  }
-
 }
