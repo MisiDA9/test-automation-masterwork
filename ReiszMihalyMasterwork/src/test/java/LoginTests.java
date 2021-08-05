@@ -15,7 +15,7 @@ class LoginTests extends BaseTest {
   @DisplayName("TC03 - Successful attempt")
   @Feature("Login")
   @Description("After a successful login attempt with valid inputs, assert that the \"Sign out\" button is displayed in the header.")
-  public void loginToTheWebshop_Success() throws InterruptedException {
+  public void loginToTheWebshop_Success() {
     Login loginPage = new Login(driver);
     loginPage.open();
     loginPage.login("michael@test.com", "pass123");
@@ -29,13 +29,11 @@ class LoginTests extends BaseTest {
   @DisplayName("TC04 - Unsuccessful attempt")
   @Feature("Login")
   @Description("After an unsuccessful login attempt with invalid password, assert that the error message is correct.")
-  public void loginToTheWebshop_Failed() throws InterruptedException {
+  public void loginToTheWebshop_Failed() {
     Login loginPage = new Login(driver);
     loginPage.open();
     loginPage.login("michael@test.com", "Not existing password");
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
-    String errorMessage = driver.findElement(By.xpath("//*[@id=\"content\"]/section/div/ul/li")).getText();
-    Assertions.assertEquals(errorMessage,"Authentication failed.");
+    Assertions.assertEquals(loginPage.getLoginFailedMessage().getText(),"Authentication failed.");
   }
 }
