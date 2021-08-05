@@ -37,4 +37,7 @@ public class Login {
     return driver.findElement(By.xpath("//*[@id=\"main\"]/header/h1")).getText();
   }
 
+  public WebElement getLoginFailedMessage() {
+    return driver.findElement(By.xpath("//*[@id=\"content\"]/section/div/ul/li"));
+  }
 }
