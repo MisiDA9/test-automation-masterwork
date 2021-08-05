@@ -7,6 +7,7 @@ import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.Duration;
 
@@ -19,25 +20,28 @@ public class ListingDataTest extends BaseTest {
   @DisplayName("TC_06 Listing products by price - ascending")
   public void listingData() throws InterruptedException {
     
-    Login loginPage = new Login(driver);
-    loginPage.open();
-
-    loginPage.login("michael@test.com", "pass123");
-
-
-    MyAccount myAccount = new MyAccount(driver);
-    myAccount.getLogo().click();
-
-    HomePage homePage = new HomePage(driver);
-    homePage.allTheProdcuts().click();
+//    Login loginPage = new Login(driver);
+//    loginPage.open();
+//
+//    loginPage.login("michael@test.com", "pass123");
+//
+//
+//    MyAccount myAccount = new MyAccount(driver);
+//    myAccount.getLogo().click();
+//
+//    HomePage homePage = new HomePage(driver);
+//    homePage.allTheProdcuts().click();
 
 
     AllTheProducts allTheProducts = new AllTheProducts(driver);
-    // itt open?
+    allTheProducts.open();
 
     allTheProducts.getFilterSelect().click();
     allTheProducts.getFromLowToHigh().click();
 
+
+//    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+    wait.until(ExpectedConditions.visibilityOf(allTheProducts.productList()));
     Thread.sleep(1000);
     for (int i = 0; i < allTheProducts.getPrices().size()-1; i++) {
       Assertions.assertTrue(allTheProducts.getPrices().get(i) <= allTheProducts.getPrices().get(i + 1));
