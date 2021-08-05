@@ -16,6 +16,10 @@ public class AllTheProducts {
     this.driver = driver;
   }
 
+  public void open() {
+    driver.get("http://test-automation-shop1.greenfox.academy/2-home");
+  }
+
   public WebElement getFilterSelect() {
     return driver.findElement(By.xpath("//*[@id=\"js-product-list-top\"]/div[2]/div/div[1]/button/i"));
   }
@@ -26,6 +30,10 @@ public class AllTheProducts {
 
   public WebElement getNextButton() {
     return driver.findElement(By.xpath("//*[@id=\"js-product-list\"]/nav/div[2]/ul/li[3]/a/i"));
+  }
+
+  public WebElement productList() {
+    return driver.findElement(By.id("js-product-list"));
   }
 
 
@@ -44,6 +52,10 @@ public class AllTheProducts {
     }
 
     return myList;
+  }
+
+  public WebElement getPreviousButton() {
+    return driver.findElement(By.className("previous js-search-link"));
   }
 
 }
