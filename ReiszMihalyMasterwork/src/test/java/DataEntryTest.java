@@ -13,13 +13,10 @@ class DataEntryTest extends BaseTest {
   @Description("After successfully adding a new address, assert that the success message is correct.")
   public void addNewAddress() {
    signUp();
-
-   NewAddresses newAddresses = new NewAddresses(driver);
-   newAddresses.open();
-   newAddresses.newAddressesInput("61652 Division Terrace", "Diego", "Texas", "11111");
+   saveANewAddress();
 
    Addresses addresses = new Addresses(driver);
-   wait.until(ExpectedConditions.visibilityOf(addresses.getFeedbackMessageADDDADDRESSSS()));
-   Assertions.assertTrue(addresses.getFeedbackMessageADDDADDRESSSS().getText().equals("Address successfully added!"));
+   wait.until(ExpectedConditions.visibilityOf(addresses.getFeedbackMessageAboutSuccessfulAddressAdding()));
+   Assertions.assertTrue(addresses.getFeedbackMessageAboutSuccessfulAddressAdding().getText().equals("Address successfully added!"));
   }
 }
