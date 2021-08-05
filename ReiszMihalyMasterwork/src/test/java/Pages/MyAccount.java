@@ -10,16 +10,15 @@ public class MyAccount {
   public MyAccount(WebDriver driver) {
     this.driver = driver;
   }
-
-  public WebElement signOut () {
+  public WebElement getSignOut() {
     return driver.findElement(By.xpath("//*[@id=\"_desktop_user_info\"]/div/a[1]"));
   }
 
-  public WebElement getLogo() {
-//    return driver.findElement(By.xpath("//*[@id=\"_desktop_logo\"]"));
-    return driver.findElement(By.id("_desktop_logo"));
+  public void open () {
+    driver.get("http://test-automation-shop1.greenfox.academy/my-account");
   }
-
-
-
 }
+
+
+
+
