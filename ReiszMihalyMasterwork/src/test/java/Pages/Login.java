@@ -33,7 +33,7 @@ public class Login {
     getSignInButton().click();
   }
 
-  public String loginToYourAccount () {
+  public String getLoginToYourAccount() {
     return driver.findElement(By.xpath("//*[@id=\"main\"]/header/h1")).getText();
   }
 
