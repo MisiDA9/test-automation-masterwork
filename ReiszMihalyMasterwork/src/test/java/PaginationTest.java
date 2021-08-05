@@ -11,17 +11,13 @@ public class PaginationTest extends BaseTest {
   @Feature("Pagination")
   @Description("After listing all products in the webshop and sorting for ascending price orders and navigating to the next page, every price should be less or equal to the next price on the second page as well")
   @DisplayName("TC_07 Listing products by price and navigating to the next page")
-  public void listingData2() throws InterruptedException {
+  public void listingData2() {
     AllTheProducts allTheProducts = new AllTheProducts(driver);
     allTheProducts.open();
 
     listingTheProducts();
-//    wait.until(ExpectedConditions.elementToBeClickable(allTheProducts.getNextButton()));
-    Thread.sleep(2000);
     navigateToTheNextPage();
 
-//     wait.until(ExpectedConditions.elementToBeClickable(allTheProducts.getPreviousButton()));
-    Thread.sleep(4000);
     for (int i = 0; i < allTheProducts.getPrices().size()-1; i++) {
       Assertions.assertTrue(allTheProducts.getPrices().get(i) <= allTheProducts.getPrices().get(i + 1));
     }
