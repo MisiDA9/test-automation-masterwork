@@ -16,30 +16,17 @@ public class Addresses {
 
   public void deleteFirst (){
     driver.findElement(By.xpath("/html/body/main/section/div/div/section/section/div[1]/article/div[2]/a[2]/span")).click();
-
   }
 
   public void updateFirst (){
      driver.findElement(By.xpath("/html/body/main/section/div/div/section/section/div[1]/article/div[2]/a[1]/span")).click();
-
   }
 
   public WebElement getFeedbackMessage () {
     return driver.findElement(By.xpath("//*[@id=\"notifications\"]/div/article"));
   }
 
-  public WebElement getFeedbackMessageADDDADDRESSSS () {
+  public WebElement getFeedbackMessageAboutSuccessfulAddressAdding() {
     return driver.findElement(By.xpath("//*[@id=\"notifications\"]/div/article/ul/li"));
   }
-
-  public boolean getSuccessfulNewAddressMessage2 () {
-    return driver.findElement(By.xpath("//*[@id=\"notifications\"]/div/article/ul/li")).isDisplayed();
-  }
-
-  public void createNewAddresses () {
-    driver.findElement(By.xpath("//*[@id=\"content\"]/div[3]/a/span")).click();
-  }
-
-
-
 }
