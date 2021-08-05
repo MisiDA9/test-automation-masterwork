@@ -15,13 +15,14 @@ public class DataEntryTestRepetitive_CSV extends BaseTest {
     signUp();
   }
 
-  @ParameterizedTest(name = "{4} Data entry: New address has been added with parameterized Test.")
+//  Szándékosan benne hagyott kikommentelt kódrészlet, az előadáshoz kell, a 2 különböző irányelv bemutatására
+//  @ParameterizedTest(name = "{4} Data entry: New address has been added with parameterized Test.")
+  @ParameterizedTest(name = "Data entry: New address has been added with parameterized Test.")
   @CsvFileSource(resources = "/input.csv", numLinesToSkip = 1)
   @Feature("Addresses")
   @Description("After adding an address, the success message should be correct every time.")
   public void paramTest1(String address, String city, String state, String postcode, String testCaseSerialNumber) {
     saveMultiplyNewAddresses();
-
     Addresses addresses = new Addresses(driver);
     Assertions.assertTrue(addresses.getFeedbackMessageAboutSuccessfulAddressAdding().getText().equals("Address successfully added!"));
   }
