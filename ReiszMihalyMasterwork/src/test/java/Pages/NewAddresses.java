@@ -4,13 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+
 public class NewAddresses {
   WebDriver driver;
 
   public NewAddresses(WebDriver driver) {
     this.driver = driver;
   }
-
 
   public void open () {
     driver.get("http://test-automation-shop1.greenfox.academy/address");
@@ -43,6 +43,4 @@ public class NewAddresses {
     getPostcode().sendKeys(postcode);
     getSaveButton().click();
   }
-
-
 }
