@@ -27,7 +27,8 @@ public class SavingDataTest extends BaseTest {
     accessories.open();
     createFolder();
     exportProductsDescriptionToTXT();
-//    Assertions.assertEquals(accessories.getProductDescription(),readTheTxt());
+
+    Assertions.assertTrue(readTheTxt().contains("Mountain Fox Cushion")&&readTheTxt().size()==(accessories.getProductDescription().size()*2));
   }
 
   @Step ("Create a folder")
@@ -46,17 +47,17 @@ public class SavingDataTest extends BaseTest {
     try {
       Files.write(Paths.get(folderName + "/accessories.txt"), accessories.getProductDescription());
     } catch (IOException e) {
-      System.out.println("Something went wrong2");
+      System.err.println("Something went wrong2");
     }
   }
 
-  @Step ("Read the txt")
+  @Step ("Read the txt file")
   public List<String> readTheTxt() {
     ArrayList<String> result = null;
     try {
       result = new ArrayList<>(Files.readAllLines(Paths.get(folderName + "/accessories.txt")));
     } catch (IOException e) {
-      System.out.println("File not exist");
+      System.err.println("File not exist");
     }
     return result;
   }
