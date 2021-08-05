@@ -34,7 +34,7 @@ class RegistrationTests extends BaseTest {
   }
 
   @Test
-  @DisplayName("TC05 - Privacy Policy ellenőrzése")
+  @DisplayName("TC05 - Privacy Policy button is clickable")
   @Feature("Registration")
   @Description("The link for the privacy policy page is correct and the privacy policy button is clickable.")
   public void shouldOpenPrivacyStatementAndCheckTheBox() {
@@ -54,7 +54,7 @@ class RegistrationTests extends BaseTest {
   @Feature("Registration")
   @Description("After an unsuccessful registration attempt with an already used email address, assert that the error message is correct.")
   public void signUpToTheWebshopUnsuccessfulAttempt() {
-    int sameRandomNumber = randomNumberGenerator();
+    int sameRandomNumber = (int) System.currentTimeMillis();
 
     Registration signUpPage = new Registration(driver);
     signUpPage.open();
@@ -66,10 +66,11 @@ class RegistrationTests extends BaseTest {
     signUpPage.signUp("Michael", "Test", sameRandomNumber + "michael@test.com", "pass123");
 
     String expectedMessage = "The email is already used, please choose another one or sign in";
-//    HomePage homePage = new HomePage(driver);
     String actual = signUpPage.getEmailIsAlreadyExistMessage();
     Assertions.assertEquals(expectedMessage, actual);
   }
+
+
 
 
 }
