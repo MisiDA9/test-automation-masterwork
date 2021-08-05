@@ -1,10 +1,11 @@
-68862 Anniversary Alley,Evansville,Indiana,47705, 09
-9 Crescent Oaks Parkway,Riverside,California,92513, 10
-8476 Gulseth Pass,Alexandria,Virginia,22301, 11
-61652 Division Terrace,Terre Haute,Indiana,47805, 12
-4 Dorton Place,El Paso,Texas,88569, 13
-7 Chinook Junction,Lexington,Kentucky,40524, 14
-1451 Duke Court,Louisville,Kentucky,40205, 15
-459 Schmedeman Trail,Denton,Texas,76210, 16
-6614 Maple Park,Columbus,Georgia,31904, 17
-18 Ruskin Street,San Jose,California,95150, 18
+Address, City, State, Zip code, Test Case Serial Number
+68862 Anniversary Alley,Evansville,Indiana,47705, TC-09
+9 Crescent Oaks Parkway,Riverside,California,92513, TC-10
+8476 Gulseth Pass,Alexandria,Virginia,22301, TC-11
+61652 Division Terrace,Terre Haute,Indiana,47805, TC-12
+4 Dorton Place,El Paso,Texas,88569, TC-13
+7 Chinook Junction,Lexington,Kentucky,40524, TC-14
+1451 Duke Court,Louisville,Kentucky,40205, TC-15
+459 Schmedeman Trail,Denton,Texas,76210, TC-16
+6614 Maple Park,Columbus,Georgia,31904, TC-17
+18 Ruskin Street,San Jose,California,95150, TC-18
