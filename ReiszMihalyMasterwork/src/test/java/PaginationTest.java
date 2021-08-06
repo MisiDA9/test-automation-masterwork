@@ -5,6 +5,7 @@ import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class PaginationTest extends BaseTest {
   @Test
@@ -18,6 +19,7 @@ public class PaginationTest extends BaseTest {
     listingTheProducts();
     navigateToTheNextPage();
 
+    wait.until(ExpectedConditions.visibilityOf(allTheProducts.getProductList()));
     for (int i = 0; i < allTheProducts.getPrices().size()-1; i++) {
       Assertions.assertTrue(allTheProducts.getPrices().get(i) <= allTheProducts.getPrices().get(i + 1));
     }
