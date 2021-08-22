@@ -5,7 +5,6 @@ import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class ListingDataTest extends BaseTest {
@@ -13,13 +12,12 @@ public class ListingDataTest extends BaseTest {
   @Feature("Listing data")
   @Description("After listing all products in the webshop and sorting for ascending price orders, every price should be less or equal to the next price.")
   @DisplayName("TC_06 Listing products by price - ascending")
-  public void listingData() {
+  public void listingData() throws InterruptedException {
     AllTheProducts allTheProducts = new AllTheProducts(driver);
     allTheProducts.open();
-
     listingTheProducts();
+    setUpPreconditionForAssertions();
 
-    wait.until(ExpectedConditions.visibilityOf(allTheProducts.getProductList()));
     for (int i = 0; i < allTheProducts.getPrices().size()-1; i++) {
       Assertions.assertTrue(allTheProducts.getPrices().get(i) <= allTheProducts.getPrices().get(i + 1));
     }
@@ -30,5 +28,12 @@ public class ListingDataTest extends BaseTest {
     AllTheProducts allTheProducts = new AllTheProducts(driver);
     allTheProducts.getFilterSelect().click();
     allTheProducts.getFromLowToHigh().click();
+  }
+
+  @Step ("Set up preconditions for assertion")
+  public void setUpPreconditionForAssertions() throws InterruptedException {
+//    wait.until(ExpectedConditions.visibilityOf(allTheProducts.getProductList()));
+//    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+    Thread.sleep(2000);
   }
 }
