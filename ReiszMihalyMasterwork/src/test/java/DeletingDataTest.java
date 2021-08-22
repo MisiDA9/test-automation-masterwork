@@ -16,8 +16,8 @@ public class DeletingDataTest extends BaseTest {
     signUp();
     saveANewAddress();
     deleteFirstAddress();
-
     Addresses addresses = new Addresses(driver);
+
     Assertions.assertTrue(addresses.getFeedbackMessage().getText().equals("Address successfully deleted!"));
   }
 
