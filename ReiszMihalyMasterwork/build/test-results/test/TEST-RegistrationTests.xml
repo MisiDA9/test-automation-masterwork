@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RegistrationTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-06T08:00:15" hostname="DESKTOP-HK79H6U" time="8.028">
+<testsuite name="RegistrationTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-22T23:04:24" hostname="DESKTOP-HK79H6U" time="14.876">
   <properties/>
-  <testcase name="signUpToTheWebshopSuccessfulAttempt()" classname="RegistrationTests" time="4.139"/>
-  <testcase name="signUpToTheWebshopUnsuccessfulAttempt()" classname="RegistrationTests" time="3.888"/>
+  <testcase name="signUpToTheWebshopSuccessfulAttempt()" classname="RegistrationTests" time="9.33"/>
+  <testcase name="signUpToTheWebshopUnsuccessfulAttempt()" classname="RegistrationTests" time="5.544"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 1041
+  <system-err><![CDATA[Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 19047
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Aug 06, 2021 10:00:15 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+Aug 23, 2021 1:04:24 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-Aug 06, 2021 10:00:15 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Aug 23, 2021 1:04:24 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 92, so returning the closest version found: 91
-Aug 06, 2021 10:00:15 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Aug 23, 2021 1:04:24 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found CDP implementation for version 92 of 91
 ]]></system-err>
 </testsuite>
