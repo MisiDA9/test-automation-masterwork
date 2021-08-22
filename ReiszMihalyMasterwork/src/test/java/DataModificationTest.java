@@ -6,7 +6,6 @@ import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
@@ -25,12 +24,11 @@ public class DataModificationTest extends BaseTest {
     Assertions.assertTrue(addresses.getFeedbackMessage().getText().equals("Address successfully updated!"));
     }
 
-  @Step ("Modify the already existed address")
+  @Step ("Modify the already existing address, modify the Post code")
   public void modifyTheAddress() {
     NewAddresses newAddresses = new NewAddresses(driver);
     Addresses addresses = new Addresses(driver);
     addresses.updateFirst();
-    newAddresses.getPostcode().sendKeys(Keys.DELETE);
     newAddresses.getPostcode().clear();
     newAddresses.getPostcode().sendKeys("12345");
     newAddresses.getSaveButton().click();
