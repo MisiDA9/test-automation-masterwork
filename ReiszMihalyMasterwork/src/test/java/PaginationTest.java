@@ -12,14 +12,12 @@ public class PaginationTest extends BaseTest {
   @Feature("Pagination")
   @Description("After listing all products in the webshop and sorting for ascending price orders and navigating to the next page, every price should be less or equal to the next price on the second page as well")
   @DisplayName("TC_07 Listing products by price and navigating to the next page")
-  public void listingData2() throws InterruptedException {
+  public void listingData2() {
     AllTheProducts allTheProducts = new AllTheProducts(driver);
     allTheProducts.open();
     listingTheProducts();
-    setUpPreconditionForAssertions();
     navigateToTheNextPage();
 
-    setUpPreconditionForAssertions();
     for (int i = 0; i < allTheProducts.getPrices().size()-1; i++) {
       Assertions.assertTrue(allTheProducts.getPrices().get(i) <= allTheProducts.getPrices().get(i + 1));
     }
@@ -38,10 +36,4 @@ public class PaginationTest extends BaseTest {
     allTheProducts.getNextButton().click();
   }
 
-  @Step ("Set up preconditions for assertion")
-  public void setUpPreconditionForAssertions() throws InterruptedException {
-//    wait.until(ExpectedConditions.visibilityOf(allTheProducts.getProductList()));
-//    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-    Thread.sleep(3000);
-  }
 }
